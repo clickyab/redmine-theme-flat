@@ -1796,12 +1796,18 @@ if (typeof module !== 'undefined' && module.exports) {
 (function($) {
 
   $(document).ready(function() {
-    var $textarea = $();
-    $( "body" ).on('keyup',".wiki, .wiki-edit", RTLText.onTextChange);
+    $("body").on('keyup',".wiki, .wiki-edit", RTLText.onTextChange);
     $("body").on('keydown',".wiki, .wiki-edit", RTLText.onTextChange);
     RTLText.setText($textarea.get(0), $textarea.val());
-	  
-	var update = $('#update')
+  });
+
+})(jQuery);
+
+
+(function($) {
+
+  $(document).ready(function() {
+    var update = $('#update')
     var close = $("<div>", {'class': "update-close"}).text('x');
 
     update.prepend(close);
