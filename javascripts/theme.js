@@ -1798,15 +1798,7 @@ if (typeof module !== 'undefined' && module.exports) {
   $(document).ready(function() {
     $("body").on('keyup',".wiki, .wiki-edit", RTLText.onTextChange);
     $("body").on('keydown',".wiki, .wiki-edit", RTLText.onTextChange);
-    RTLText.setText($textarea.get(0), $textarea.val());
-  });
 
-})(jQuery);
-
-
-(function($) {
-
-  $(document).ready(function() {
     var update = $('#update')
     var close = $("<div>", {'class': "update-close"}).text('x');
 
