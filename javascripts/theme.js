@@ -1809,7 +1809,7 @@ if (typeof module !== 'undefined' && module.exports) {
 	     }
 	});
 
-	$.each($(".issue .subject a"), function(i,v){
+	$.each($(".issue .subject a, .issue .subject h3"), function(i,v){
 		var txt = $(v).text();
 		for(ci in txt) {
 			if (txt.charCodeAt(ci) > 0x600 && txt.charCodeAt(ci) < 0x700) {
