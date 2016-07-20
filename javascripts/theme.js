@@ -1799,6 +1799,26 @@ if (typeof module !== 'undefined' && module.exports) {
     $("body").on('keyup',".wiki, .wiki-edit", RTLText.onTextChange);
     $("body").on('keydown',".wiki, .wiki-edit", RTLText.onTextChange);
 
+    $.each($(".wiki, .wiki-edit"), function(i,v){
+        var txt = $(v).text();
+	for(ci in txt) {
+	     if (txt.charCodeAt(ci) > 0x600 && txt.charCodeAt(ci) < 0x700) {
+	         $(v).css("direction", "rtl");
+		     break;
+		}
+	     }
+	});
+
+	$.each($(".issue .subject a"), function(i,v){
+		var txt = $(v).text();
+		for(ci in txt) {
+			if (txt.charCodeAt(ci) > 0x600 && txt.charCodeAt(ci) < 0x700) {
+				$(v).parent().css("direction", "rtl");
+				$(v).parent().css("text-align", "right");
+				break;
+			}
+		}
+	});
     var update = $('#update')
     var close = $("<div>", {'class': "update-close"}).text('x');
 
