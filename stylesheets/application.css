@@ -775,3 +775,7 @@ select[multiple="multiple"] {
 ul.ui-menu {
   z-index: 1000; 
 }
+
+pre, code {
+  direction: ltr !important;
+}
